@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ place.name }}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+</head>
+<body>
+{% include 'head.html' %}
+<h1 class="g">{{ place.name }}</h1>
+<section class="search-s">
+
+    {% if place.image %}
+    <img src="{{ place.image.url }}" style="width:400px; border-radius:10px;">
+    {% endif %}
+    
+    <h2>About</h2>
+    <p>{{ place.description }}</p>
+    
+    <h2>Culture</h2>
+    <p>{{ place.culture }}</p>
+    
+    <h2>Ethnicity</h2>
+    <p>{{ place.ethnicity }}</p>
+    
+<h2>Best Time To Visit</h2>
+<p>{{ place.best_time }}</p>
+
+<h2>How To Reach</h2>
+<p>{{ place.how_to_reach }}</p>
+
+<br>
+<a href="{% url 'home' %}">⬅ Back to Home</a>
+</section>
+
+</body>
+</html>

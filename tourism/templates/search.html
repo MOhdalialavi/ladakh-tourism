@@ -1,0 +1,41 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search </title>
+        
+
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+    </head>
+
+<body>
+    {% include 'head.html' %} 
+
+<h2 class="g">Search Results for: "{{ query }}"</h2>
+<section class="search-s">
+
+
+
+{% if results %}
+    {% for place in results %}
+        <div>
+            <h3>{{ place.name }}</h3>
+            <p>{{ place.description|truncatewords:20 }}</p>
+
+            <a href="{% url 'place_detail' place.slug %}">
+                Open Full Page
+            </a>
+        </div>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+
+</section>
+
+</body>
+</html>

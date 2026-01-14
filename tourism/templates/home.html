@@ -1,0 +1,271 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladakh Tourism</title>
+    <link rel="stylesheet" href="static\index.css">
+    <link rel="stylesheet" href="static\style.css">
+    
+</head>
+<body>
+{% include 'head.html' %}
+<div class="myslides">
+    <img class="mySlides" src="https://www.easeindiatrip.com/blog/wp-content/uploads/2025/05/Ladkah-Expect-at-Pangong-Lake-03.jpg" style="width:100%">
+    <img class="mySlides" src="https://ladakh.gov.in/places-centres/pangong-lake/" style="width:100%">
+    
+  <div class="first">
+        <h1 >Adventure Awaits In Ladakh</h1>
+        <p>Find places, routes & adventures easily</p>
+        <form method="GET" action="{% url 'search_place' %}">
+    <input type="text" name="q" placeholder="Search place..." required>
+    <button class="btn" type="submit">Search places</button>
+</form>
+
+    </div>
+    </div>
+
+
+<section id="about">
+    <h2>About Ladakh And Names Of  All Religious And Non Religious Popular places of Ladakh  </h2>
+    <p>
+     Ladakh, India's high-altitude "Land of Passes," is famous for stark beauty, Buddhist monasteries, and Tibetan culture, offering adventure like trekking and scenic drives to places like Pangong Lake, Nubra Valley, and high passes showcasing its unique landscape and rich Buddhist heritage. 
+    </p>
+
+<section class="destinations">
+    <h2>Popular Religious Destinations</h2>
+
+    <div class="dest-box">
+        <div class="place">Shanti Stupa</div>
+        <div class="place">Hemis Monastery</div>
+        <div class="place">Imam bargah leh</div>
+        <div class="place">Shey Monastery</div>
+    </div>
+</section>
+          
+<section class="destinations">
+    <h2>Popular Non ReligiousDestinations</h2>
+
+    <div class="dest-box">
+        <div class="place">Pangong Lake</div>
+        <div class="place">Nubra Valley</div>
+        <div class="place">Magnetic Hill</div>
+        <div class="place">Zanskar Valley</div>
+    </div>
+</section>
+
+
+          <li> Kargil War Memorial</li>
+     </ol>  
+</section>
+
+<section id="places">
+    <h2>Popular Religious Places</h2>
+    <div class="cards">
+       
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-wSgDl6uCH92Rba-BQ_V5t6XfbDYz6O-8g&s">
+            <h3>karpokhar</h3>
+            <p>Located in kargil.</p>
+             <a href="{% url 'search_place' %}?q=karpokhar" >home </a>   
+        </div> 
+            <div class="card">
+                <img src=" https://s7ap1.scene7.com/is/image/incredibleindia/jama-masjid-1-attr-hero?qlt=82&ts=1726667958296">
+                <h3>LEH</h3>
+                <p>Jama Masjid located in leh.</p>
+                 <a href="{% url 'search_place' %}?q=leh">Open Leh Page</a>
+       
+    </div>
+       
+           <div class="card">
+            <img src="https://www.orangewayfarer.com/wp-content/uploads/2021/03/PXL_20210222_105117060.PORTRAIT-02.jpg">
+            <h3>KARGIL</h3>
+            <p>Located in kercheykhar.</p>
+             <a href="{% url 'search_place' %}?q=kargil">Visit kargil page </a>   
+        </div>
+          <div class="card">
+            <img src="https://www.lehladakhindia.com/wp-content/uploads/2018/12/shanti-stupa-1.jpg">
+            <h3>LEH</h3>
+            <p>Located in leh</p>
+             <a href="/ladakhtourism/template/home.html" >home </a>   
+        </div>
+          
+    </div>
+</section>
+
+<section id ="places2">
+    <h2>Popular Places</h2>
+    <div class ="cards">
+
+    <div class="card">
+       <img src="https://images.indianexpress.com/2022/07/Drass.jpg?w=1600">
+       <h3>Kargil war memorial</h3>
+       <p> Honors soldiers lost in the 1999 Kargil War (Operation Vijay) against Pakistan.</p>
+        <a href="/ladakhtourism/template/home.html#map" >To Find The Place Go To Map Of Ladakh</a>   
+    </div>
+     <div class="card">
+       <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/00/2f/67/img-20180620-wa0007-largejpg.jpg?w=1200&h=-1&s=1">
+       <h3>LEH</h3>
+       <p> Stunning, high-altitude setting, brackish (salty) water, and incredible color changes from vibrant blue to green/grey throughout the day</p>
+    
+    </div>
+     <div class="card">
+       <img src="https://www.swantour.com/blogs/wp-content/uploads/2019/05/Nubra-Valley.jpg">
+       <h3>Nubra Valley.</h3>
+       <p>a stunning, high-altitude cold desert in Ladakh, India, known for its surreal landscapes where sand dunes meet lush riverbanks and snow-capped peaks, earning it the name "Valley of Flowers" (Ldumra)..</p>
+       
+    </div>
+     <div class="card">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHmjyKW7UMJyL6wXDqvjoqBrAqAPRqXBGQPw&s">
+       <h3>Located in Kargil(chiktan)</h3>
+       <p>A crumbling, historic fortress built from rammed earth and stone, known for its unique architecture, including a legendary rotating room, and its significance as a former political center for the Chiktan region before being abandoned in the late 19th century</p>
+       
+    </div>
+    </div>
+</section>
+<div class="map" id="map">
+    <h2>Map of Ladakh</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115596.4862631912!2d76.0926892082036!3d34.15258897961454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e2fb4c5b5b8b7f%3A0x5a4c8e4e4e4e4e4e!2sLadakh%2C%20India!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+<section id="activities">
+    <h2>Things To Do In Ladakh</h2>
+    <ol type="1">
+        <li>Trekking</li>
+        <li>Bike Trips</li>
+        <li>River Rafting</li>
+        <li>Camping</li>
+    
+    </ol>
+    
+    <section class="services">
+        <h1>Activities</h1>
+        <p class="subtitle">
+            Explore the adventurous experiences of Ladakh with us.
+        </p>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38HwOjtFTeNRrOMw9-NyKV2VPvj96Dwurow&s" alt="Rafting">
+                <button>RAFTING</button>
+            </div>
+
+            <div class="service-card">
+                <img src="https://www.potala-himalaya.com/uploads/potala_himalaya/package/main/64018f3552b91142_kanji-la-ladakh-zanskar-traverse-trek.png" alt="Hiking">
+                <button>Trekking</button>
+            </div>
+
+            <div class="service-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt7Jh03wNXu_e6SeVGPrOvZS7D6JhvIwEJw&s" alt="Camping">
+                <button>CAMPING</button>
+            </div>
+            <div class="service-card">
+                <img src="https://www.brahmandtour.com/img/motorbiketour/srinagar-leh-bike-tour.jpg" alt="Bike Riding">
+                <button>Bike Riding</button>
+            </div>
+          
+
+        </div>
+    </section>
+
+      <div class="service">
+    <h2>Best Time to Visit</h2>
+    <p>
+        Best time to visit Ladakh is from May to September.
+        Winters are extremely cold but perfect for snow lovers.
+    </p>
+    
+ <div class="service-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU4w5Uz7WhwLl3X5vAMLdwi8QuD3WsMppI-A&s" alt="June">
+                <button>June</button>
+            </div>
+
+             <div class="service-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWWFkBPh3Kr574cZwkxsFlwooCcODPXwVWA&s" alt="July">
+                <button>July</button>
+            </div>
+             <div class="service-card">
+                <img src="https://www.ekashmirtourism.com/wp-content/uploads/2023/01/image-13.jpg" alt="August">
+                <button>August</button>
+            </div>
+   
+   
+</div>
+</section>
+
+
+
+<section id="tips">
+    <h2>Travel Tips</h2>
+    <ul>
+        <li>Carry warm clothes</li>
+        <li>Acclimatize properly</li>
+        <li>Check weather & road conditions</li>
+        <li>Inner Line Permit required</li>
+    </ul>
+</section>
+<section id="travel">
+    <h2>How to Reach Ladakh</h2>
+    <p>
+        By Air: Kushok Bakula Rimpochee Airport (Leh Airport) connects Ladakh with major cities.
+    </p>
+    <p>
+        By Road: Accessible via Manali-Leh Highway and Srinagar-Leh Highway.
+    </p>
+    <p>For more information, visit our website or contact us.</p>
+    </section>
+
+<div class="join">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="contact-section">
+    <h2 class="contact-title">Contact Us</h2>
+    <p class="contact-subtitle">
+        If you have any questions, please fill out the form below or contact us using the information provided.
+    </p>
+
+    <div class="contact-info">
+        <div><i class="fa-solid fa-location-dot"></i> 123 abc ladakh</div>
+        <div><i class="fa-solid fa-envelope"></i> info@ladakhtourism.com</div>
+        <div><i class="fa-solid fa-phone"></i> +91 1234567891</div>
+    </div>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Enter your name" required>
+        <input type="email" placeholder="Enter your email" required>
+        <textarea placeholder="Message" rows="3" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+</div>
+
+<footer>
+    <p>© 2026 Ladakh Tourism Guide</p>
+    <p>Safe Travel • Explore More</p>
+</footer>
+
+
+</body>
+</html>
+<script>    
+    var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); 
+}
+</script> 

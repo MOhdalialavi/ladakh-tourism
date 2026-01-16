@@ -255,3 +255,30 @@
 .search-s{
     margin: 20px;
 }
+.search-box{
+    position: relative;
+    width: 350px;
+}
+
+#suggestions{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#suggestions div{
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+#suggestions div:hover{
+    background: #f2f2f2;
+}

@@ -17,13 +17,15 @@
     <img class="mySlides" src="https://www.easeindiatrip.com/blog/wp-content/uploads/2025/05/Ladkah-Expect-at-Pangong-Lake-03.jpg" style="width:100%">
     <img class="mySlides" src="https://ladakh.gov.in/places-centres/pangong-lake/" style="width:100%">
     
-  <div class="first">
-        <h1 >Adventure Awaits In Ladakh</h1>
-        <p>Find places, routes & adventures easily</p>
-        <form method="GET" action="{% url 'search_place' %}">
-    <input type="text" name="q" placeholder="Search place..." required>
+<div class="first"> <h1 >Adventure Awaits In Ladakh</h1> <p>Find places, routes & adventures easily</p> 
+   <form method="GET" action="{% url 'search_place' %}" class="search-box">
+    <input type="text" name="q" id="searchInput" placeholder="Search place..." autocomplete="off" required>
     <button class="btn" type="submit">Search places</button>
+
+    <div id="suggestions" class="suggestions-box"></div>
 </form>
+
+
 
     </div>
     </div>
@@ -268,4 +270,52 @@ function carousel() {
   x[slideIndex-1].style.display = "block";
   setTimeout(carousel, 2000); 
 }
-</script> 
+
+const searchInput = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("suggestions");
+
+searchInput.addEventListener("input", function () {
+    let query = this.value.trim();
+
+    if (query.length === 0) {
+        suggestionsBox.style.display = "none";
+        suggestionsBox.innerHTML = "";
+        return;
+    }
+
+    fetch(`/suggest/?q=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            suggestionsBox.innerHTML = "";
+
+            if (data.length === 0) {
+                suggestionsBox.style.display = "none";
+                return;
+            }
+
+            suggestionsBox.style.display = "block";
+
+            data.forEach(placeName => {
+                let div = document.createElement("div");
+                div.textContent = placeName;
+
+                div.onclick = function () {
+                    searchInput.value = placeName;
+                    suggestionsBox.style.display = "none";
+
+                    // ✅ open the search result page
+                    window.location.href = `/search/?q=${placeName}`;
+                };
+
+                suggestionsBox.appendChild(div);
+            });
+        });
+});
+
+// hide box when click outside
+document.addEventListener("click", function (e) {
+    if (e.target !== searchInput && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = "none";
+    }
+});
+</script>

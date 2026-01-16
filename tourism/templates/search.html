@@ -14,7 +14,7 @@
 <body>
     {% include 'head.html' %} 
 
-<h2 class="g">Search Results for: "{{ query }}"</h2>
+<!-- <h2 class="g">Search Results for: "{{ query }}"</h2> -->
 <section class="search-s">
 
 
@@ -22,12 +22,13 @@
 {% if results %}
     {% for place in results %}
         <div>
-            <h3>{{ place.name }}</h3>
-            <p>{{ place.description|truncatewords:20 }}</p>
+            <!-- <h3>{{ place.name }}</h3> -->
+            <!-- <p>{{ place.description|truncatewords:20 }}</p> -->
+            {% include 'place_detail.html' %}
 
-            <a href="{% url 'place_detail' place.slug %}">
+            <!-- <a href="{% url 'place_detail' place.slug %}">
                 Open Full Page
-            </a>
+            </a> -->
         </div>
         <hr>
     {% endfor %}

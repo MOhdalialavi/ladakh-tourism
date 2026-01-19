@@ -276,6 +276,7 @@
 #suggestions div{
     padding: 10px;
     cursor: pointer;
+    color:black;
     border-bottom: 1px solid #eee;
 }
 

@@ -20,9 +20,9 @@
 <div class="first"> <h1 >Adventure Awaits In Ladakh</h1> <p>Find places, routes & adventures easily</p> 
    <form method="GET" action="{% url 'search_place' %}" class="search-box">
     <input type="text" name="q" id="searchInput" placeholder="Search place..." autocomplete="off" required>
+    <div id="suggestions" class="suggestions-box"></div>
     <button class="btn" type="submit">Search places</button>
 
-    <div id="suggestions" class="suggestions-box"></div>
 </form>
 
 
@@ -174,26 +174,28 @@
         </div>
     </section>
 
-      <div class="service">
+      <div class="service" id="visit">
     <h2>Best Time to Visit</h2>
     <p>
         Best time to visit Ladakh is from May to September.
         Winters are extremely cold but perfect for snow lovers.
     </p>
-    
- <div class="service-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU4w5Uz7WhwLl3X5vAMLdwi8QuD3WsMppI-A&s" alt="June">
-                <button>June</button>
-            </div>
+    <div class="service-container">
 
-             <div class="service-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWWFkBPh3Kr574cZwkxsFlwooCcODPXwVWA&s" alt="July">
-                <button>July</button>
-            </div>
-             <div class="service-card">
-                <img src="https://www.ekashmirtourism.com/wp-content/uploads/2023/01/image-13.jpg" alt="August">
-                <button>August</button>
-            </div>
+        <div class="service-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU4w5Uz7WhwLl3X5vAMLdwi8QuD3WsMppI-A&s" alt="June">
+            <button>June</button>
+        </div>
+        
+        <div class="service-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWWFkBPh3Kr574cZwkxsFlwooCcODPXwVWA&s" alt="July">
+            <button>July</button>
+        </div>
+        <div class="service-card">
+            <img src="https://www.ekashmirtourism.com/wp-content/uploads/2023/01/image-13.jpg" alt="August">
+            <button>August</button>
+        </div>
+    </div>
    
    
 </div>
@@ -237,7 +239,7 @@
         <div><i class="fa-solid fa-phone"></i> +91 1234567891</div>
     </div>
 
-    <form class="contact-form">
+    <form class="contact-form" id="contact">
         <input type="text" placeholder="Enter your name" required>
         <input type="email" placeholder="Enter your email" required>
         <textarea placeholder="Message" rows="3" required></textarea>
